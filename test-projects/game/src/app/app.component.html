@@ -20,8 +20,10 @@ We can then access this index variable as Input in odd.component.ts as {{number}
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
-      </app-even>
+      <app-even
+        *ngFor="let evenNumber of evenNumbers"
+        [number]="evenNumber"
+      ></app-even>
     </div>
   </div>
 </div>
