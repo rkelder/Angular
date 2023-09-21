@@ -8,7 +8,7 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipedetailComponent implements OnInit {
   @Input()
-  recipe!: Recipe;
+  recipe: Recipe = { name: '', description: '', imagePath: '' };
 
   constructor() {}
   ngOnInit() {}
