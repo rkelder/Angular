@@ -9,7 +9,7 @@ export class HeaderComponent {
   @Output() featureSelected = new EventEmitter<string>();
   collapsed = true;
 
-  onListClick(feature: string) {
+  onSelectHeaderItem(feature: string) {
     this.featureSelected.emit(feature);
   }
 }
