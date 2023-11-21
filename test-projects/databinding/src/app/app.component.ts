@@ -1,28 +1,38 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  serverElements = [];
-  newServerName = '';
-  newServerContent = '';
+  // We are creating key-value pairs of a server elements array using JavaScript syntax.
+  // We are looping through this array in the app.component.html .
+  serverElements = [
+    { type: "server", name: "Testserver", content: "Just a test" },
+  ];
 
-  onAddServer() {
+  onServerAdded(serverData: { serverName: string; serverContent: string }) {
     this.serverElements.push({
-      type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
+      type: "server",
+      name: serverData.serverName,
+      content: serverData.serverContent,
     });
   }
 
-  onAddBlueprint() {
+  onBlueprintAdded(serverData: { serverName: string; serverContent: string }) {
     this.serverElements.push({
-      type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
+      type: "blueprint",
+      name: serverData.serverName,
+      content: serverData.serverContent,
     });
+  }
+
+  onChangeFirst() {
+    this.serverElements[0].name = "Changed!";
+  }
+
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
   }
 }
